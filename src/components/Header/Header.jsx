@@ -6,9 +6,6 @@ import { useNavigate } from 'react-router-dom'
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status)
-  if (authStatus) {
-    const data = useSelector((state) => state.auth.userData)
-  }
 
   const navigate = useNavigate()
 
