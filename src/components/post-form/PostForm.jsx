@@ -41,7 +41,7 @@ export default function PostForm({ post }) {
                 console.log("featured image uploaded to database");
                 const fileId = file.$id;
                 data.featuredImage = fileId;
-                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
+                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id , createdBy:userData.email});
 
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
@@ -75,7 +75,7 @@ export default function PostForm({ post }) {
 
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+            <div className="w-2/3 px-2 text-white">
                 <Input
                     label="Title :"
                     placeholder="Title"
@@ -93,7 +93,7 @@ export default function PostForm({ post }) {
                 />
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
             </div>
-            <div className="w-1/3 px-2">
+            <div className="w-1/3 text-white px-2">
                 <Input
                     label="Featured Image :"
                     type="file"
@@ -116,7 +116,7 @@ export default function PostForm({ post }) {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="hover:bg-green-800 cursor-pointer transition
+                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="hover:border-blue-500 cursor-pointer transition
                  w-full duration-300">
                     {post ? "Update" : "Submit"}
                 </Button>

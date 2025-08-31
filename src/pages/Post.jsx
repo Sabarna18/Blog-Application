@@ -36,23 +36,23 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="py-8">
-            <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+        <div className="p-3">
+            <Container className={`bg-pink-200 rounded-2xl p-4 m-2`}>
+                <div className="w-full p-6 bg-slate-900 flex justify-center mb-4 relative border rounded-xl">
                     <img
                         src={`${appwriteService.getFilePreview(post.featuredImage)}&mode=admin`}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="rounded-xl w-full h-150 object-cover"
                     />
 
                     {isAuthor && (
-                        <div className="absolute right-6 top-6">
+                        <div className="absolute p-4 right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3 transition: hover:bg-green-800 cursor-pointer">
+                                <Button bgColor="bg-green-700" className="mr-3   transition: hover:bg-green-900 cursor-pointer">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-500" className="mr-3 cursor-pointer hover:bg-red-800" onClick={deletePost}>
+                            <Button bgColor="bg-red-700" className="mr-3 cursor-pointer hover:bg-red-900" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>
@@ -63,6 +63,9 @@ export default function Post() {
                 </div>
                 <div className="browser-css">
                     {parse(post.content)}
+                    <h3 className=' bg-slate-500 cursor-pointer inline-block hover:bg-slate-300 transition duration-300
+         hover:border-black border-2 border-transparent rounded-md m-4 p-2 text-black'> posted by: {post.createdBy}</h3>
+
                 </div>
             </Container>
         </div>
