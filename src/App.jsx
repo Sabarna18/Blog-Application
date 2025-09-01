@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const stat = useSelector((state) => state.auth.status);
-  
+
 
   useEffect(() => {
 

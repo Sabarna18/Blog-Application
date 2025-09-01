@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/config";
-import { Button, Container } from "../components";
+import { Button, Container, Logo } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 
@@ -30,7 +30,7 @@ export default function Post() {
         appwriteService.deletePost(post.$id).then((status) => {
             if (status) {
                 appwriteService.deleteFile(post.featuredImage);
-                navigate("/");
+                navigate("/all-posts");
             }
         });
     };
@@ -48,11 +48,11 @@ export default function Post() {
                     {isAuthor && (
                         <div className="absolute p-4 right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-700" className="mr-3   transition: hover:bg-green-900 cursor-pointer">
+                                <Button bgColor="bg-green-700" className="mr-3 border-transparent border-2  transition duration-300 hover:border-slate-900 hover:bg-green-900 cursor-pointer">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-700" className="mr-3 cursor-pointer hover:bg-red-900" onClick={deletePost}>
+                            <Button bgColor="bg-red-700" className="mr-3 cursor-pointer  border-transparent border-2  transition duration-300 hover:border-slate-900 hover:bg-red-900" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>
@@ -64,9 +64,10 @@ export default function Post() {
                 <div className="browser-css">
                     {parse(post.content)}
                     <h3 className=' bg-slate-500 cursor-pointer inline-block hover:bg-slate-300 transition duration-300
-         hover:border-black border-2 border-transparent rounded-md m-4 p-2 text-black'> posted by: {post.createdBy}</h3>
+                    hover:border-black border-2 border-transparent rounded-md m-4 p-2 text-black'> posted by: {post.createdBy}</h3>
 
                 </div>
+                <Logo />
             </Container>
         </div>
     ) : null;
