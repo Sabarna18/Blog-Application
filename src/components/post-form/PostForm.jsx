@@ -21,33 +21,28 @@ export default function PostForm({ post }) {
     const submit = async (data) => {
         if (post) {
             const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
-
             if (file) {
                 appwriteService.deleteFile(post.featuredImage);
             }
-
             const dbPost = await appwriteService.updatePost(post.$id, {
                 ...data,
                 featuredImage: file ? file.$id : undefined,
             });
-
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
+                alert("Successfully updated your Blog");
             }
         } else {
             const file = await appwriteService.uploadFile(data.image[0]);
-
             if (file) {
-                console.log("featured image uploaded to database");
                 const fileId = file.$id;
                 data.featuredImage = fileId;
-                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id , createdBy:userData.email});
+                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id, createdBy: userData.email });
 
                 if (dbPost) {
                     navigate(`/post/${dbPost.$id}`);
+                    alert("Successfully uploaded your Blog");
                 }
-            } else {
-                console.log("couldn't upload featured image to database");
             }
         }
     };

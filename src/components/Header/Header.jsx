@@ -40,14 +40,11 @@ function Header() {
 
 
   return (
-    <header className='py-3 mb-6 shadow bg-slate-900'>
+    <header className='py-3 shadow bg-slate-900'>
       <Container>
         <nav className='flex'>
           <div className='mr-4'>
-            <Link to='/'>
-              <Logo width='70px' />
-
-            </Link>
+            <Logo width='70px' />
           </div>
           <ul className='flex ml-auto'>
             {navItems.map((item) =>
@@ -68,7 +65,7 @@ function Header() {
                 </li>
                 <div className='p-1 border-2 border-transparent hover:border-blue-700 transition 
                       duration-300 cursor-pointer bg-black rounded-md'>
-                  <h1 className='bg-blend-difference p-2 roundedmd text-bold text-white'>welcome to core: {userData.email}</h1>
+                  <h1 className='bg-blend-difference p-2 roundedmd text-bold text-white'>welcome to THE CORE {userData.email}</h1>
                 </div>
               </div>
 

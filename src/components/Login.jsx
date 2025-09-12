@@ -34,7 +34,7 @@ function Login() {
         <div
             className='flex items-center justify-center w-full'
         >
-            <div className={`mx-auto w-full max-w-lg text-white bg-[url('https://images.pexels.com/photos/3250359/pexels-photo-3250359.jpeg')] rounded-xl p-10 border border-black/10`}>
+            <div className={`mx-auto m-8 w-full max-w-lg duration-75 text-white bg-[url('https://images.pexels.com/photos/3250359/pexels-photo-3250359.jpeg')] rounded-xl p-10 border border-black/10`}>
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />

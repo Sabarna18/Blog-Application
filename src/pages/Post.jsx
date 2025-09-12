@@ -31,13 +31,14 @@ export default function Post() {
             if (status) {
                 appwriteService.deleteFile(post.featuredImage);
                 navigate("/all-posts");
+                alert("Blog deleted");
             }
         });
     };
 
     return post ? (
         <div className="p-3">
-            <Container className={`bg-pink-200 rounded-2xl p-4 m-2`}>
+            <Container className={`bg-yellow-100 rounded-2xl p-4 m-2`}>
                 <div className="w-full p-6 bg-slate-900 flex justify-center mb-4 relative border rounded-xl">
                     <img
                         src={`${appwriteService.getFilePreview(post.featuredImage)}&mode=admin`}
@@ -48,11 +49,11 @@ export default function Post() {
                     {isAuthor && (
                         <div className="absolute p-4 right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-700" className="mr-3 border-transparent border-2  transition duration-300 hover:border-slate-900 hover:bg-green-900 cursor-pointer">
+                                <Button bgColor="bg-green-700/50" className="mr-3 border-transparent  border-3 px-6 transition duration-300 hover:border-slate-900 hover:bg-green-900 cursor-pointer">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgColor="bg-red-700" className="mr-3 cursor-pointer  border-transparent border-2  transition duration-300 hover:border-slate-900 hover:bg-red-900" onClick={deletePost}>
+                            <Button bgColor="bg-red-700/50" className="mr-3 cursor-pointer  border-transparent border-3 px-6 transition duration-300 hover:border-slate-900 hover:bg-red-900" onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>

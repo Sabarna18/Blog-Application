@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom'
 import Logo from '../Logo'
 
 function Footer() {
-  return (
-    <section className="relative overflow-hidden py-10 bg-slate-900 mt-6 border border-t-2 border-t-black">
+    return (
+        <section className="relative overflow-hidden py-10 bg-slate-900 mt-6 border border-t-2 border-t-black">
+
+
+
+            {/* Footer Content */}
+
             <div className="relative z-10 mx-auto max-w-7xl px-4">
                 <div className="-m-6 flex flex-wrap">
                     <div className="w-full p-6 md:w-1/2 lg:w-5/12">
@@ -14,7 +19,7 @@ function Footer() {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-600">
-                                    &copy; Copyright 2023. All Rights Reserved by DevUI.
+                                    &copy; {new Date().getFullYear()} The CORE All Rights Reserved by DevUI.
                                 </p>
                             </div>
                         </div>
@@ -28,7 +33,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/features"
                                     >
                                         Features
                                     </Link>
@@ -36,7 +41,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/pricing"
                                     >
                                         Pricing
                                     </Link>
@@ -44,7 +49,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/affiliate-program"
                                     >
                                         Affiliate Program
                                     </Link>
@@ -52,7 +57,7 @@ function Footer() {
                                 <li>
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/press-kit"
                                     >
                                         Press Kit
                                     </Link>
@@ -69,7 +74,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/accounts"
                                     >
                                         Account
                                     </Link>
@@ -77,7 +82,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/help"
                                     >
                                         Help
                                     </Link>
@@ -85,7 +90,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/contact-us"
                                     >
                                         Contact Us
                                     </Link>
@@ -93,7 +98,7 @@ function Footer() {
                                 <li>
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/customer-support"
                                     >
                                         Customer Support
                                     </Link>
@@ -110,7 +115,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/terms-conditions"
                                     >
                                         Terms &amp; Conditions
                                     </Link>
@@ -118,7 +123,7 @@ function Footer() {
                                 <li className="mb-4">
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/privacy-policy"
                                     >
                                         Privacy Policy
                                     </Link>
@@ -126,7 +131,7 @@ function Footer() {
                                 <li>
                                     <Link
                                         className=" text-base font-medium text-white hover:text-gray-400"
-                                        to="/"
+                                        to="/licensing"
                                     >
                                         Licensing
                                     </Link>
@@ -137,7 +142,7 @@ function Footer() {
                 </div>
             </div>
         </section>
-  )
+    )
 }
 
 export default Footer

@@ -32,9 +32,9 @@ function App() {
     <div className='min-h-screen flex flex-wrap content-between bg-slate-800'>
       <div className='w-full block'>
         <Header />
-        <main>
+        <div className="bg-[url('https://static.vecteezy.com/system/resources/previews/007/278/150/non_2x/dark-background-abstract-with-light-effect-vector.jpg')]"  >
           <Outlet />
-        </main>
+        </div>
         <Footer />
       </div>
     </div>
